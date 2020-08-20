@@ -1,9 +1,9 @@
 import { cartTotal } from './cartTotal.js';
 import { getCart } from '../helpers/data/cartData.js';
+import { emptyCart } from '../helpers/data/cartData.js';
 
 const makeCheckoutModal = () => {
-    $("#cart").html(` 
-      <div class="modal fade" id="buy-modal" tabindex="-1" role="dialog" aria-labelledby="buy-modalLabel" aria-hidden="true">
+    return `<div class="modal fade" id="buy-modal" tabindex="-1" role="dialog" aria-labelledby="buy-modalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
@@ -35,14 +35,7 @@ const makeCheckoutModal = () => {
             </div>
           </div>
         </div>
-      </div>`
-      );
-      $('#charge-it').click(() => {
-        const ccNum = $('#credit-card').val();
-        chargeIt(ccNum);
-      })
-  
-      showCartItems();
+      </div>`;
 };
 
 const showCartItems = () => {
